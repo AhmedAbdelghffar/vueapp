@@ -1,6 +1,6 @@
 <template>
   <div class="Home">
-    <input type="text" v-on:input="changeTitle">
+    <input type="text" v-on:keyup.enter="changeTitle">
     <h1>{{ msg }}</h1>
     <hr>
     <form @submit.prevent="addSkill">
@@ -12,7 +12,7 @@
 
     <ul>
       <transition-group name="list-push" enter-active-class="animated fadeInUp" leave-active-class="animated fadeOutDown">
-      <li v-for="(data, index) in skills" :key='index'>{{ data.skill }}</li>
+      <li v-for="(data, index) in skills" :key='index'>{{ data.skill }} <span v-on:click="remove(index)">x</span></li>
       </transition-group>
     </ul> 
 
@@ -40,6 +40,9 @@ export default {
     addSkill:function() {
       this.skills.push({skill: this.skill});
       this.skill = '';
+    },
+    remove: function(id){
+      this.skills.splice(id,1);
     }
   }
 }

@@ -1,6 +1,8 @@
 <template>
   <div class="about">
-    <h1> this is about {{name}}</h1>
+    <h1 @click="colored = !colored" :class="myclasses"> this is about {{name}}</h1>
+
+
   </div>
 </template>
 
@@ -9,8 +11,18 @@ export default {
   name: 'about',
   data () {
     return {
-      name: this.$route.params.name
+      name: this.$route.params.name,
+      colored: false
     }
+  },
+
+  computed: {
+      myclasses: function(){
+          return{
+              red: this.colored,
+              dark: !this.colored
+          }
+      }
   }
 
 }
@@ -18,5 +30,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.red{
+    background: red;
+}
+
+dark {
+    background: black;
+    color:white;
+}
 
 </style>

@@ -4,6 +4,12 @@
     <nav>
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
+    <router-link to="/contact">Contact</router-link>
+    <router-link to="/parent">Parent</router-link>
+    <router-link to="/parentprop">parentprop</router-link>
+    <router-link to="/childprop1">childprop1</router-link>
+    <router-link to="/childprop2">childprop2</router-link>
+    <router-link to="/main">main</router-link>
     </nav>
     <router-view/>
   </div>

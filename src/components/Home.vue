@@ -16,6 +16,9 @@
       </transition-group>
     </ul> 
 
+    <h1> {{pass}}</h1>
+
+    <slot></slot>
 
   </div>
 </template>
@@ -44,7 +47,8 @@ export default {
     remove: function(id){
       this.skills.splice(id,1);
     }
-  }
+  },
+  props:['pass']
 }
 </script>
 
